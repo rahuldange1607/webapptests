@@ -17,7 +17,7 @@ public class App
 	
     public static void main( String[] args )
     {
-    	System.setProperty("webdriver.chrome.driver","/home/edureka/chromedriver");
+    	System.setProperty("webdriver.chrome.driver","/usr/lib/chromium-browser/chromedriver");
     	ChromeOptions chromeOptions = new ChromeOptions();
     	WebDriver driver = new ChromeDriver(chromeOptions);
     	driver.get("http://localhost/index.php");
