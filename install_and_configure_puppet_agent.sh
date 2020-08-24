@@ -1,4 +1,4 @@
-#!/bin/bash:wq
+#!/bin/bash
 
 echo "Adding Puppet Repo"
 ufw enable
