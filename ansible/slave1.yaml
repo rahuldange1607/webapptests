@@ -1,0 +1,19 @@
+---
+
+- name: Setup Slave
+  gather_facts: false
+  hosts: slave1
+  become: yes
+  tasks:
+
+    - name: Install git
+      apt:
+            name: git
+            state: present
+            update_cache: yes
+
+    - name: Install Chromedriver
+      apt:
+            name: chromium-chromedriver
+            state: present
+            update_cache: yes
