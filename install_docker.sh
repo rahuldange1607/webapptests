@@ -7,6 +7,7 @@ rm -rf pkg
 pdk build --force
 
 echo "Installing puppet module"
+/opt/puppetlabs/bin/puppet module install puppetlabs-pwshlib --version 0.5.0
 /opt/puppetlabs/bin/puppet module install pkg/edureka-install_docker_ce-0.1.0.tar.gz --force --ignore-dependencies
 
 echo "Adding puppet module to the default puppet manifest"
