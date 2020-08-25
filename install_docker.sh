@@ -1,7 +1,12 @@
 #!/bin/bash
 
-echo "Installing puppet module for docker"
-/opt/puppetlabs/bin/puppet module install puppetlabs-docker --version 3.11.0
+cd puppet/install_docker_ce
 
-echo "Installing docker using puppet module"
-/opt/puppetlabs/bin/puppet apply ./puppet/manifests/install_docker.pp
+echo "Building the puppet module to install docker"
+pdk build
+
+echo "Installing puppet module"
+/opt/puppetlabs/bin/puppet module install pkg/install_docker_ce*.tar.gz
+
+echo "Adding puppet module to the default puppet manifest"
+grep -qxF 'class {''docker'':}' /etc/puppetlabs/code/environments/production/manifests/site.pp || echo 'class {''docker'':}' >> /etc/puppetlabs/code/environments/production/manifests/site.pp
