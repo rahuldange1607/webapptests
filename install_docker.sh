@@ -3,7 +3,11 @@
 cd puppet/install_docker_ce
 
 echo "Building the puppet module to install docker"
-pdk build
+rm -rf pkg
+pdk build --force
+
+echo "Uploading the puppet module to puppet forge"
+pdk release --force --version 0.1.0
 
 echo "Installing puppet module"
 /opt/puppetlabs/bin/puppet module install install_docker_ce --version 0.1.0
