@@ -12,7 +12,7 @@ echo "Building selenium tests for webapp"
 mvn clean install
 
 echo "Testing webapp"
-java -jar target/webapptests-0.0.1-SNAPSHOT.jar com.edureka.webapptests.App
+java -cp target/webapptests-0.0.1-SNAPSHOT.jar com.edureka.webapptests.App
 
 echo "Stopping webapp docker container"
 docker container stop webapp
