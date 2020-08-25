@@ -17,6 +17,7 @@ public class App {
     {
     	System.setProperty("webdriver.chrome.driver","/usr/lib/chromium-browser/chromedriver");
     	ChromeOptions chromeOptions = new ChromeOptions();
+    	chromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
     	WebDriver driver = new ChromeDriver(chromeOptions);
     	driver.get("http://localhost/index.php");
     	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
