@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BUILD_NUMBER=$1
+
 echo "Building docker image"
 docker build -t rahuldange1607/webapp:${BUILD_NUMBER} .
 
