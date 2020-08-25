@@ -17,4 +17,4 @@ echo "Installing puppet module maven"
 /opt/puppetlabs/bin/puppet module install maestrodev-maven --version 1.4.0
 
 echo "Adding puppet module maven to the default puppet manifest"
-grep -qF 'maven::maven' /etc/puppetlabs/code/environments/production/manifests/site.pp || printf 'class { ''maven::maven'':\n\tversion => ''3.6.3''}' >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+grep -qF 'maven::maven' /etc/puppetlabs/code/environments/production/manifests/site.pp || printf 'class { "maven::maven":\n\tversion => "3.6.3"\n\t} ->' >> /etc/puppetlabs/code/environments/production/manifests/site.pp
