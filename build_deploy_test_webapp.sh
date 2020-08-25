@@ -2,9 +2,6 @@
 
 BUILD_NUMBER=$1
 
-echo "Updating puppet agent"
-/opt/puppetlabs/bin/puppet agent --test
-
 echo "Building docker image for webapp"
 docker build -t rahuldange1607/webapp:${BUILD_NUMBER} .
 
