@@ -1,18 +1,16 @@
 package com.edureka.webapptests;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
-import org.testng.Assert;
 import org.openqa.selenium.chrome.ChromeOptions;
-/**
- * Hello world!
- *
- */
-public class App 
-{
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class App {
+	
 	@Test
 	
     public static void main( String[] args )
@@ -26,4 +24,5 @@ public class App
     	Assert.assertEquals(driver.findElement(By.id("PID-ab2-pg")).isDisplayed(), true);
     	driver.quit();
     }
+
 }
